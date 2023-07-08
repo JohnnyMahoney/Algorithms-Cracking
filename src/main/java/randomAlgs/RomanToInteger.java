@@ -3,6 +3,8 @@ package randomAlgs;
 import java.util.HashMap;
 import java.util.Map;
 
+//Given a string of roman numeral, convert it to an integer.
+
 public class RomanToInteger {
     public static void main(String[] args) {
         String s = "MCMXCIV";
