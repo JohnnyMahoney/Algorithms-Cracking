@@ -6,6 +6,8 @@ public class LongestCommonPrefix {
         System.out.println(longestCommonPrefix(words));
 
     }
+
+
     public static String longestCommonPrefix(String[] strs) {
 
         String prefix = strs[0];
