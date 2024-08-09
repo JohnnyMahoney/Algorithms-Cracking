@@ -1,5 +1,7 @@
 package randomAlgs;
 
+import java.util.Arrays;
+
 public class SumOfThreeValues {
     public static boolean findSumOfThreeWithoutSorting(int[] nums, int target) {
         int n = nums.length;;
@@ -17,8 +19,31 @@ public class SumOfThreeValues {
         return false;
     }
 
+    public static boolean findSumOfThreeWithSorting(int[] nums, int target) {
+
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length-2;i++){
+            int left = i + 1;
+            int right = nums.length -1;
+
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if(sum == target){
+                    System.out.println("triplet found");
+                    return true;
+                } else if (sum<target) {
+                    left++;
+                    
+                }else {
+                    right--;
+                }
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
-        int[] arr = {3,7,1,2,8,4,5};
-        findSumOfThreeWithoutSorting(arr, 17);
+        int[] arr = {11,7,1,2,40,4,5};
+        findSumOfThreeWithSorting(arr, 56);
     }
 }
