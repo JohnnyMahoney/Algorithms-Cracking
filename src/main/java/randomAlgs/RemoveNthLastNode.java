@@ -38,7 +38,7 @@ public class RemoveNthLastNode {
         }
         System.out.println("NULL");
     }
-    }
+}
 
 class LinkedListNode {
     public int data;
