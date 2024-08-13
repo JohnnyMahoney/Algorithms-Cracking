@@ -6,11 +6,11 @@ public class SortColors {
         int current = 0;
         int end = colors.length - 1;
 
-        while(current <= end){
-            if(colors[current] == 0) {
+        while (current <= end) {
+            if (colors[current] == 0) {
                 int flag = colors[start];
                 colors[start] = colors[current];
-                colors[current]= flag;
+                colors[current] = flag;
                 start++;
                 current++;
             } else if (colors[current] == 1) {
@@ -18,7 +18,7 @@ public class SortColors {
             } else {
                 int flag = colors[end];
                 colors[end] = colors[current];
-                colors[current]= flag;
+                colors[current] = flag;
                 end--;
             }
 
@@ -30,7 +30,7 @@ public class SortColors {
         int[] arr = {2, 2, 1, 0, 0, 1, 2, 1};
         sortColors(arr);
 
-        for (int element: arr) {
+        for (int element : arr) {
             System.out.println(element + "");
         }
 
