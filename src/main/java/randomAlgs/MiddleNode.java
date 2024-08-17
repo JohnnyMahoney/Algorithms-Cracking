@@ -21,10 +21,9 @@ public class MiddleNode {
             fast = fast.next.next;
         }
 
-        if(fast.next == null){
+        if (fast.next == null) {
             return slow;
-        }
-        else return slow.next;
+        } else return slow.next;
     }
 
     public static void main(String[] args) {
