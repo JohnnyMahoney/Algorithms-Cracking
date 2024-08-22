@@ -46,9 +46,9 @@ public class K_MergeAlgorithm {
 
     public static void main(String[] args) {
         List<List<Integer>> lists = new ArrayList<>();
-        lists.add(Arrays.asList(1,4,5));
-        lists.add(Arrays.asList(1,3,4));
-        lists.add(Arrays.asList(2,6));
+        lists.add(Arrays.asList(2,4,5));
+        lists.add(Arrays.asList(2,3,4));
+        lists.add(Arrays.asList(1,6));
 
         List<Integer> mergedList = mergeKLists(lists);
         System.out.println(mergedList);
