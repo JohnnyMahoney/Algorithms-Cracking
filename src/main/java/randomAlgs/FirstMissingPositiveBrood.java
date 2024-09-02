@@ -23,6 +23,5 @@ public class FirstMissingPositiveBrood {
         int[] arr = {7, 1, 2, 4, 6, 9, 0, 8};
         int result = findValue(arr);
         System.out.println(result);
-
     }
 }
