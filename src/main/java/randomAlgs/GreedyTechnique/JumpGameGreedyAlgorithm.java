@@ -1,6 +1,6 @@
-package randomAlgs;
+package randomAlgs.GreedyTechnique;
 
-public class JumpGameGreedyAlgorith {
+public class JumpGameGreedyAlgorithm {
     public static boolean canJump(int[] nums) {
         int n = nums.length;
         int maxReach = 0;
