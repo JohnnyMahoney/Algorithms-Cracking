@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.MergeIntervals;
 
 
 import java.util.ArrayList;
