@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.twoPointers;
 
 public class PalindromString {
     public static boolean isPalindrome(String s) {
