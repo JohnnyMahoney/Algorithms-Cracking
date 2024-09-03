@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.SlidingWindow;
 
 import java.util.HashSet;
 import java.util.Set;
