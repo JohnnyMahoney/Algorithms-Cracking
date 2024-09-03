@@ -1,6 +1,6 @@
 package randomAlgs.Matrix;
 
-public class IslandPerimeter {
+public class IslandPerimeterRecursion {
     public static int perimeter(int[][] grid){
 
         for(int i = 0; i<grid.length; i++) {
