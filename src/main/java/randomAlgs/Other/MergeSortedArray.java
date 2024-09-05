@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.Other;
 
 public class MergeSortedArray {
     static int[] num1 ={1,2,3,0,0,0};
