@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.LinkedList;
 
 class ListNode {
       int val;

@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.LinkedList;
 
 public class LinkedListNode {
     public int data;

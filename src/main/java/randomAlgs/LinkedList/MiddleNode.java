@@ -1,28 +1,22 @@
-package randomAlgs;
+package randomAlgs.LinkedList;
 
-public class LinkedListCycle {
-    private static class LinkedListNode {
-        public int data;
-        public LinkedListNode next;
+import randomAlgs.LinkedList.LinkedListNode;
 
-        public LinkedListNode(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+public class MiddleNode {
 
-    public static boolean detectCycle(LinkedListNode head) {
+
+    public static LinkedListNode middleNode(LinkedListNode head) {
         LinkedListNode slow = head;
         LinkedListNode fast = head;
 
-        while (fast != null && fast.next != null) {
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) {
-                return true;
-            }
         }
-        return false;
+
+        if (fast.next == null) {
+            return slow;
+        } else return slow.next;
     }
 
     public static void main(String[] args) {
@@ -32,13 +26,15 @@ public class LinkedListCycle {
         LinkedListNode linkedListNode2 = new LinkedListNode(6);
         LinkedListNode linkedListNode3 = new LinkedListNode(7);
         LinkedListNode linkedListNode4 = new LinkedListNode(8);
+        LinkedListNode linkedListNode5 = new LinkedListNode(9);
 
         linkedListNode.next = linkedListNode1;
         linkedListNode1.next = linkedListNode2;
         linkedListNode2.next = linkedListNode3;
         linkedListNode3.next = linkedListNode4;
-        linkedListNode4.next = linkedListNode3;
-        detectCycle(linkedListNode);
+        linkedListNode4.next = linkedListNode5;
+        LinkedListNode test = middleNode(linkedListNode);
+        System.out.println(test.data);
 
     }
 }

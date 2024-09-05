@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.LinkedList;
 
 public class RemoveNthLastNode {
     public static LinkedListNode removeNthLastNode(LinkedListNode head, int n) {
@@ -31,21 +31,11 @@ public class RemoveNthLastNode {
         linkedListNode3.next = linkedListNode4;
         linkedListNode4.next = linkedListNode5;
         LinkedListNode modifiedHead = removeNthLastNode(linkedListNode1, 2);
-        LinkedListNode current = modifiedHead;
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
+
+        while (modifiedHead != null) {
+            System.out.print(modifiedHead.data + " -> ");
+            modifiedHead = modifiedHead.next;
         }
         System.out.println("NULL");
-    }
-}
-
-class LinkedListNode {
-    public int data;
-    public LinkedListNode next;
-
-    public LinkedListNode(int data) {
-        this.data = data;
-        this.next = null;
     }
 }
