@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.fastAndSlowPointers;
 
 public class HappyNumber {
     public static boolean isHappyNumber(int n) {

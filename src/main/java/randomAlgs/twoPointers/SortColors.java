@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.twoPointers;
 
 public class SortColors {
     public static int[] sortColors(int[] colors) {

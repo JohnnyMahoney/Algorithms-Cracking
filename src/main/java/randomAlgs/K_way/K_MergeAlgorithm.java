@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.K_way;
 
 import java.util.*;
 
