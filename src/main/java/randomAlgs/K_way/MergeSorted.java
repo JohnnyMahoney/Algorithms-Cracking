@@ -13,8 +13,7 @@ public class MergeSorted {
             if (p1 >= 0 && nums1[p1] > nums2[p2]) {
                 nums1[p] = nums1[p1];
                 p1 -= 1;
-            }
-            else {
+            } else {
                 nums1[p] = nums2[p2];
                 p2 -= 1;
             }
@@ -23,11 +22,11 @@ public class MergeSorted {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = {4,5,6,0,0,0};
-        int[] nums2 = {1,2,3};
+        int[] nums1 = {4, 5, 6, 0, 0, 0};
+        int[] nums2 = {1, 2, 3};
         int[] list = mergeSorted(nums1, 3, nums2, 3);
 
-        for (int element: list) {
+        for (int element : list) {
             System.out.println(element);
         }
     }
