@@ -7,7 +7,6 @@ import java.util.List;
 public class SearchInRotatedSortedArray {
 
     public static int binarySearchRotated(List<Integer> nums, int target) {
-
         int start = 0;
         int end = nums.size() - 1;
 
@@ -19,14 +18,11 @@ public class SearchInRotatedSortedArray {
             if (nums.get(start) <= nums.get(mid)) {
                 if (nums.get(start) <= target && target < nums.get(mid)) {
                     end = mid - 1;
-                }
-                    else start = mid+1;
-            }
-            else {
-                if (target > nums.get(mid) && target <= nums.get(end)){
-                    start = mid+1;
-                }
-                else
+                } else start = mid + 1;
+            } else {
+                if (target > nums.get(mid) && target <= nums.get(end)) {
+                    start = mid + 1;
+                } else
                     end = mid - 1;
             }
         }
