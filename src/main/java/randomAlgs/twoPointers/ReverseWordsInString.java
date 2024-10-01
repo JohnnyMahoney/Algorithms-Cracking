@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.twoPointers;
 
 public class ReverseWordsInString {
     public static String reverseWords(String sentence) {

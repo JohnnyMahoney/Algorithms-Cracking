@@ -1,4 +1,4 @@
-package randomAlgs;
+package randomAlgs.twoPointers;
 
 import java.util.HashMap;
 import java.util.Map;
