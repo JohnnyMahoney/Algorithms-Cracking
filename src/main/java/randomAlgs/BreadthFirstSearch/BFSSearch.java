@@ -51,9 +51,6 @@ public class BFSSearch {
         bfsSearch.addEdge("Alice", "Peggy");
         bfsSearch.addEdge("Peggy", "Phill");
         bfsSearch.addEdge("Phill", "Mary");
-
         bfsSearch.search("Bob");
-
     }
-
 }
