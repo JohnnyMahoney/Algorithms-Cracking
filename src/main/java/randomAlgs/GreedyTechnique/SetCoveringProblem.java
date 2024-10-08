@@ -1,12 +1,13 @@
 package randomAlgs.GreedyTechnique;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class SetCoveringProblem {
+
     public static void main(String[] args) {
+
         Set<String> statesNeeded = new HashSet<>();
         statesNeeded.add("mt");
         statesNeeded.add("wa");
@@ -33,14 +34,13 @@ public class SetCoveringProblem {
             for (Map.Entry<String, Set<String>> station : stations.entrySet()) {
                 Set<String> covered = new HashSet<>(station.getValue());
                 covered.retainAll(statesNeeded);
-                System.out.println(covered);
 
                 if (covered.size() > statesCovered.size()) {
                     bestStation = station.getKey();
                     statesCovered = covered;
                 }
             }
-            if(bestStation != null) {
+            if (bestStation != null) {
                 finalStations.add(bestStation);
                 statesNeeded.removeAll(statesCovered);
             }
