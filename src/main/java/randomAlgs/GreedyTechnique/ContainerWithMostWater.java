@@ -3,21 +3,21 @@ package randomAlgs.GreedyTechnique;
 public class ContainerWithMostWater {
 
     public static int maxArea(int[] height) {
-        int start = 0;
-        int end = height.length - 1;
-        int maxValue = 0;
+        int leftPointer = 0;
+        int rightPointer = height.length - 1;
+        int maxArea = 0;
 
-        while (start < end) {
-            int minValue = Math.min(height[start], height[end]);
-            if (maxValue < (end - start) * minValue)
-                maxValue = (end - start) * minValue;
+        while (leftPointer < rightPointer) {
+            int minValue = Math.min(height[leftPointer], height[rightPointer]);
+            if (maxArea < (rightPointer - leftPointer) * minValue)
+                maxArea = (rightPointer - leftPointer) * minValue;
 
-            if (minValue == height[start])
-                start++;
+            if (height[leftPointer] < height[rightPointer])
+                leftPointer++;
             else
-                end--;
+                rightPointer--;
         }
-        return maxValue;
+        return maxArea;
     }
 
 
