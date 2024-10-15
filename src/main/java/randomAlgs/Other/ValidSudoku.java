@@ -72,13 +72,11 @@ public class ValidSudoku {
                     continue;
                 }
 
-                // Check the row
                 if (rows[i].contains(value)) {
                     return false;
                 }
                 rows[i].add(value);
 
-                // Check the column
                 if (cols[j].contains(value)) {
                     return false;
                 }
