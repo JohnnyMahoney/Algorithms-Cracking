@@ -3,6 +3,8 @@ package randomAlgs.Other;
 public class RotateImage {
     static int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
+    //Space Complexity O(n^2)
+    //Time Complexity O(n^2)
     public static int[][] rotate(int[][] matrix) {
         int[][] newMatrix = new int[matrix.length][matrix[0].length];
 
@@ -15,6 +17,8 @@ public class RotateImage {
         return newMatrix;
     }
 
+    //Space Complexity O(1)
+    //Time Complexity O(n^2)
     public static void rotate2(int[][] matrix) {
         int n = matrix.length;
 
