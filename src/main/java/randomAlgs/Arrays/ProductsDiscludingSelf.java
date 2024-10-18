@@ -21,6 +21,7 @@ public class ProductsDiscludingSelf {
         return result;
     }
 
+    //Time Complexity - O(n)
     public static int[] productExceptSelf2(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
