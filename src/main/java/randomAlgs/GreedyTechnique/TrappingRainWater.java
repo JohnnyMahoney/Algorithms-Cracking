@@ -3,70 +3,35 @@ package randomAlgs.GreedyTechnique;
 public class TrappingRainWater {
 
     public static int trap(int[] height) {
+        if (height == null || height.length == 0) return 0;
+
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
         int result = 0;
-        int left = 0;;
 
-        for (int i = 0; i < height.length-1; i++) {
-            int right = findBiggerValue(i, height);
-
-            if (right == 0) {
-                break;
-            }
-
-            if (right == left + 1) {
-                left = right;
-                continue;
-            }
-            if (height[right] >= height[left]) {
-                int blocks = calculateBlocks(left, right, height);
-                result += height[left] * (right - left-1) - blocks;
-            } else {
-                right = findMaxValue(i + 1, height);
-                if (right == left + 1) {
-                    left = right;
-                    continue;
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= leftMax) {
+                    leftMax = height[left];
+                } else {
+                    result += leftMax - height[left];
                 }
-                int blocks = calculateBlocks(left, right, height);
-                result += height[right] * (right - left) - blocks;
-            }
-            left = right;
-            i = right-1;
-        }
-        return result;
-    }
-
-    public static int findBiggerValue(int a, int[] height) {
-        for (int i = a + 1; i < height.length; i++) {
-            if (height[i] >= height[a])
-                return i;
-        }
-        return 0;
-    }
-
-    public static int calculateBlocks(int a, int b, int[] height) {
-        int result = 0;
-        for (int i = a + 1; i < b; i++) {
-            if (height[i] > 0) {
-                result += height[i];
+                left++;
+            } else {
+                if (height[right] >= rightMax) {
+                    rightMax = height[right];
+                } else {
+                    result += rightMax - height[right];
+                }
+                right--;
             }
         }
         return result;
     }
 
-    public static int findMaxValue(int a, int[] height) {
-        int maxValue = height[a];
-        int index = a;
-        for (int i = a+1; i < height.length; i++) {
-            if (height[i] > maxValue) {
-                maxValue = height[i];
-                index =  i;
-            }
-        }
-        return index;
-    }
 
     public static void main(String[] args) {
-        int[] height = {4,2,3};
+        int[] height = {0, 2, 0, 3, 1, 0, 1, 3, 2, 1};
         int result = trap(height);
         System.out.println(result);
     }
