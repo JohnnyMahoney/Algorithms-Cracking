@@ -1,4 +1,4 @@
-package randomAlgs.Arrays;
+package randomAlgs.Arrays_Strings;
 
 public class ProductsDiscludingSelf {
 

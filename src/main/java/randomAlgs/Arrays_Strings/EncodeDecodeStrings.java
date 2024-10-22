@@ -1,4 +1,4 @@
-package randomAlgs.Arrays;
+package randomAlgs.Arrays_Strings;
 
 import java.util.ArrayList;
 import java.util.List;
