@@ -47,7 +47,7 @@ public class PermutationString {
     }
 
     public static void main(String[] args) {
-        boolean result = checkInclusion("abc", "lecaabee");
+        boolean result = checkInclusion("abc", "lecabee");
         System.out.println(result);
     }
 }
