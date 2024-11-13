@@ -1,4 +1,4 @@
-package randomAlgs.Other;
+package randomAlgs.Stack;
 
 import java.util.Stack;
 
