@@ -1,4 +1,4 @@
-package randomAlgs.Arrays_Strings;
+package randomAlgs.SlidingWindow;
 
 import java.util.HashMap;
 

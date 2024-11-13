@@ -1,4 +1,4 @@
-package randomAlgs.Arrays_Strings;
+package randomAlgs.SlidingWindow;
 
 public class PermutationString {
     public static boolean checkInclusion(String s1, String s2) {
