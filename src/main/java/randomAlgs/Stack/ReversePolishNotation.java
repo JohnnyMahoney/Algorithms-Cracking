@@ -11,26 +11,22 @@ public class ReversePolishNotation {
                 int b = stack.pop();
                 int a = stack.pop();
                 stack.push(a + b);
-            }
-            else if (token.equals("-")) {
+            } else if (token.equals("-")) {
                 int b = stack.pop();
                 int a = stack.pop();
                 stack.push(a - b);
-            }
-            else if (token.equals("*")) {
+            } else if (token.equals("*")) {
                 int b = stack.pop();
                 int a = stack.pop();
                 stack.push(a * b);
-            }
-            else if (token.equals("/")) {
+            } else if (token.equals("/")) {
                 int b = stack.pop();
                 int a = stack.pop();
                 stack.push(a / b);
-            }
-            else
+            } else
                 stack.push(Integer.parseInt(token));
         }
-            return stack.pop();
+        return stack.pop();
     }
 
     public static void main(String[] args) {
