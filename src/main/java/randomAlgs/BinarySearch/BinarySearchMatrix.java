@@ -2,6 +2,7 @@ package randomAlgs.BinarySearch;
 
 public class BinarySearchMatrix {
 
+    // O(m * log(n))
     public static boolean searchMatrix(int[][] matrix, int target) {
         for (int i = 0; i < matrix.length; i++) {
             int start = 0;
@@ -19,6 +20,33 @@ public class BinarySearchMatrix {
         return false;
     }
 
+    // O(log(n*m)
+    public static boolean searchMatrix2(int[][] matrix, int target) {
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int start = 0;
+        int end = m * n - 1;
+
+        while (start <= end) {
+            int middle = start + (end - start) / 2;
+
+            int row = middle / n;
+            int col = middle % n;
+
+            int middleValue = matrix[row][col];
+            if (middleValue == target) {
+                return true;
+            } else if (middleValue < target) {
+                start = middle + 1;
+            } else {
+                end = middle - 1;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         int[][] matrix = {
@@ -27,8 +55,7 @@ public class BinarySearchMatrix {
                 {14, 20, 30, 40}
         };
 
-        boolean res = searchMatrix(matrix, 10);
+        boolean res = searchMatrix2(matrix, 10);
         System.out.println(res);
-
     }
 }
