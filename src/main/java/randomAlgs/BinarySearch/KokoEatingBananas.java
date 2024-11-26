@@ -6,35 +6,42 @@ import java.util.Arrays;
 
 public class KokoEatingBananas {
     public static int minEatingSpeed(int[] piles, int h) {
-        Arrays.sort(piles);
-        int hours = 0;
-        int k = 0;
-        int i = 0;
-        while (i < piles[piles.length - 1]) {
-            i += 1;
-            for (int j = 0; j < piles.length; j++) {
-                k = i;
-                hours += 1;
-                while (piles[j] - k > 0) {
-                    k += i;
-                    hours += 1;
-                }
-            }
-            if (hours > h) {
-                hours = 0;
+
+        int left = 1;
+        int right = Arrays.stream(piles).max().getAsInt();
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (canEatAll(piles, h, mid)) {
+                right = mid;
             } else {
-                return i;
+                left = mid + 1;
             }
 
+
         }
-        return 0;
+
+        return left;
+    }
+
+    private static boolean canEatAll(int[] piles, int h, int k) {
+        int hours = 0;
+        for (int pile : piles) {
+            hours += (pile + k - 1) / k;
+        }
+        return hours <= h;
     }
 
 
     public static void main(String[] args) {
 
-        int[] piles = {25,10,23,4};
-        int result = minEatingSpeed(piles, 4);
-        System.out.println(result);
+        int[] piles1 = {1, 4, 3, 2};
+        int h1 = 9;
+        System.out.println(minEatingSpeed(piles1, h1));
+
+        int[] piles2 = {25, 10, 23, 4};
+        int h2 = 4;
+        System.out.println(minEatingSpeed(piles2, h2));
     }
 }
